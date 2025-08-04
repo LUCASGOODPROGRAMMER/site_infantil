@@ -1,0 +1,14 @@
+{
+    "animal_galery": [
+        {
+            "id": 1,
+            "nome": "elefante",
+            "rotaImg": "https://br.pinterest.com/pin/18788523420745737/"
+        },
+        {
+            "id": 2,
+            "nome": "tigre_siberiano",
+            "rotaImg": "https://br.pinterest.com/pin/56435801576041035/"
+        }
+    ]
+}

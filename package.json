@@ -10,8 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  
+    "deploy": "gh-pages -d dist",
+    "server": "json-server data/db.json"
 },
 "dependencies": {
   "json-server": "^1.0.0-beta.3",
