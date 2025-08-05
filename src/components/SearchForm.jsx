@@ -9,7 +9,7 @@ import './SearchForm.css';
 
 const SearchForm = () => {
   const [query, setQuery] = useState("");
-  const navigate = useNavigate();
+
 
   const handleSubmit = (e) => {
     e.preventDefault();

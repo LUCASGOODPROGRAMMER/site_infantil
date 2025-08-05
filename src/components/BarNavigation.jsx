@@ -5,6 +5,7 @@ import Cards from "./Cards"
 //import Material from "./Material"
 //import Quiz from "./Quiz"
 import "./BarNavigation.css"
+import SearchForm from "./SearchForm"
 
 const BarNavigation = () => {
     const [section, setSection] = useState("0")
@@ -27,6 +28,7 @@ const BarNavigation = () => {
     return (
         <>
             <div id="bar-navigation">
+                       <SearchForm/>
                 <button 
                     onClick={() => setSection("0")} 
                     className={section === "0" ? "active" : ""}

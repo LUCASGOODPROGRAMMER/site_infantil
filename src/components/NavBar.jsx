@@ -14,7 +14,7 @@ const NavBar = () => {
        <button id="disparar_menu"><img alt="menu_icon" /></button>
        <div>
         <img src={people}  alt="" />
-        <NavLink to="/login" className={({ isActive }) => (isActive ? "active" : "")}>login</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "active" : "")}>login</NavLink>
        </div>
     </nav>
   )

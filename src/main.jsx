@@ -8,7 +8,6 @@ import App from "./App.jsx";
 
 // routes
 import ErrorPage from './routes/ErrorPage.jsx'
-import Login from "./routes/Login.jsx";
 import Home from "./routes/Home.jsx";
 
 
@@ -21,7 +20,7 @@ const router = createBrowserRouter(
       errorElement: <ErrorPage />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "login", element: <Login /> },
+     
         {
           path: "teste",
           element: <Navigate to="/" />
