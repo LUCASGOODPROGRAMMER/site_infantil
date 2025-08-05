@@ -1,3 +1,11 @@
+rode no terminal:
+npm install react-router-dom json-server
+npm run dev para rodar o site
+npm run server para rodar o servidor
+
+obs: necessário ter o ambiente node.js instalado no desktop
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

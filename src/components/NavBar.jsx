@@ -4,7 +4,6 @@ import {Link, NavLink} from 'react-router-dom'
 //componentes
 
 //imagens
-import bird from '../imgs/navbar/bird.svg'
 import people from '../imgs/navbar/people.svg'
 
 // estilos

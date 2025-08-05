@@ -1,5 +1,5 @@
 import { useFetch } from "../hooks/useFetch";
-import '../routes/Search.css';
+import './Cards.css';
 
 const Cards = () => {
 

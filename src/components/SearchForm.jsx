@@ -13,7 +13,7 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("search?nome=" + query);
+    console.log(query)
   };
 
   return (
