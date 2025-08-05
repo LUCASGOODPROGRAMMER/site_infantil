@@ -1,5 +1,5 @@
 // hooks
-import {Link, NavLink} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 //componentes
 
@@ -9,12 +9,16 @@ import people from '../imgs/navbar/people.svg'
 // estilos
 import './NavBar.css'
 const NavBar = () => {
+  const navigate = useNavigate()
+  const activeLogin = () => {
+    navigate("login")
+  }
   return (
     <nav>
        <button id="disparar_menu"><img alt="menu_icon" /></button>
        <div>
         <img src={people}  alt="" />
-        <NavLink className={({ isActive }) => (isActive ? "active" : "")}>login</NavLink>
+        <button id="btn-login" onClick={activeLogin}>login</button>
        </div>
     </nav>
   )

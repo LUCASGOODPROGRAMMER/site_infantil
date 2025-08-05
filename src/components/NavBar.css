@@ -35,19 +35,20 @@ nav>div:last-child img {
   background-color: #fff;
 }
 
-nav a {
+#btn-login {
+  background-color: transparent;
+  border: 2px solid #ffffffcc; /* borda branca semitransparente */
   color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  background-color: #4a90e2;
-  transition: background-color 0.3s;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-nav a:hover {
-  background-color: #1270db;
-}
-
-nav a.active {
-  background-color: #247bdf;
+#btn-login:hover {
+  background-color: #ffffff22; /* leve destaque ao passar o mouse */
+  border-color: #ffffff;
+  color: #ffffff;
 }
