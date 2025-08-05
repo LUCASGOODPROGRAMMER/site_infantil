@@ -9,6 +9,7 @@ import App from "./App.jsx";
 // routes
 import ErrorPage from './routes/ErrorPage.jsx'
 import Home from "./routes/Home.jsx";
+import SearchResults from "./routes/SearchResults.jsx";
 
 
 //roteador
@@ -24,6 +25,10 @@ const router = createBrowserRouter(
         {
           path: "teste",
           element: <Navigate to="/" />
+        },
+        {
+          path: "search",
+          element: <SearchResults/>
         }
       ],
     },

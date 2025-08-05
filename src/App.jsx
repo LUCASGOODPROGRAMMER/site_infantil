@@ -1,6 +1,3 @@
-// hook
-import { Outlet } from 'react-router-dom'
-
 // componentes
 import NavBar from './components/NavBar'
 
@@ -20,7 +17,7 @@ function App() {
     <>
         <NavBar />
         <BarNavigation/>
-        <Outlet />
+
     </>
   )
 }
