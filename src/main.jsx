@@ -14,7 +14,7 @@ import Search from './routes/Search.jsx';
 import Cards from './routes/Cards.jsx';
 import Atividades from './routes/Atividades.jsx';
 import Quiz from './routes/Quiz.jsx';
-import Material from './components/Material.jsx';
+import Material from './routes/Material.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
 
 // Configuração das rotas

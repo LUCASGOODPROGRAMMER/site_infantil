@@ -2,6 +2,9 @@
 import { useFetch } from "../hooks/useFetch"
 import { useSearchParams } from "react-router-dom"
 
+//estilos
+import './Cards.css'
+
 const Search = () => {
     const [searchParams] = useSearchParams();
 
