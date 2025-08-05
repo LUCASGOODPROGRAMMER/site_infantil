@@ -1,25 +1,17 @@
-// componentes
-import NavBar from './components/NavBar'
-
-import BarNavigation from './components/BarNavigation'
-
-
-//estilos
-import './App.css'
-
-
-
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import BarNavigation from "./components/BarNavigation";
 
 function App() {
-
-
   return (
     <>
-        <NavBar />
-        <BarNavigation/>
-
+      <NavBar />
+      <main>
+        <BarNavigation />
+        <Outlet /> {/* Aqui entra Cards, Quiz, Atividades, Material */}
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

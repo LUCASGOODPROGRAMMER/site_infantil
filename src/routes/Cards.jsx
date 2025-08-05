@@ -18,8 +18,8 @@ const Cards = () => {
       {items.length > 0 ? (
         items.map((item) => (
           <div className="card" key={item.id}>
-            <img src={item.rotaImg} alt={item.nome} className="animal-img" />
-            <h2 className="animal-name">{item.nome}</h2>
+            <img src={item.rotaImg} alt={item.name} className="animal-img" />
+            <h2 className="animal-name">{item.name}</h2>
           </div>
         ))
       ) : (

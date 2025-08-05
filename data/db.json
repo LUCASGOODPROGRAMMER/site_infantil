@@ -2,27 +2,27 @@
     "cards": [
         {
             "id": 1,
-            "nome": "gato",
+            "name": "gato",
             "rotaImg": "https://i.pinimg.com/736x/d5/85/3a/d5853aeb4f7d60d4f8b4d70c26abc776.jpg"
         },
         {
             "id": 2,
-            "nome": "tigre_siberiano",
+            "name": "tigre_siberiano",
             "rotaImg": "https://i.pinimg.com/736x/bb/39/a9/bb39a9755ed9723ec3f926fc2d7a6d3b.jpg"
         },
         {
             "id":3,
-            "nome":"burro",
+            "name":"burro",
             "rotaImg":"https://i.pinimg.com/736x/95/dc/b0/95dcb00a87bfab768a54d6e3cb0744f6.jpg"
         },
         {
             "id":4,
-            "nome":"patrick",
+            "name":"patrick",
             "rotaImg":"https://i.pinimg.com/736x/33/a3/9e/33a39e4ab434f52d952d9b358f6e1643.jpg"
         },
         {
             "id":5,
-            "nome":"burnice",
+            "name":"burnice",
             "rotaImg":"https://i.pinimg.com/736x/65/bb/86/65bb86359f5554dd8f362447c56ea182.jpg"
         }
     ]

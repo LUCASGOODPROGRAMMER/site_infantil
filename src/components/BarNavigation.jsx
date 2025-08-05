@@ -1,68 +1,39 @@
-import { Outlet } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 // BarNavigation.jsx
-import { useState } from "react"
-import Cards from "./Cards"
-//import Atividades from "./Atividades"
-//import Material from "./Material"
-//import Quiz from "./Quiz"
 import "./BarNavigation.css"
 import SearchForm from "./SearchForm"
 
 const BarNavigation = () => {
-    const [section, setSection] = useState("0")
 
-    const renderSection = () => {
-        switch (section) {
-            case "0":
-                return <Cards />
-            case "1":
-                return <Atividades />
-            case "2":
-                return <Material />
-            case "3":
-                return <Quiz />
-            default:
-                return <p>Seção não encontrada.</p>
-        }
-    }
 
     return (
         <>
+            <div id="bar-navigation">
+                <SearchForm />
+                <NavLink
+                    to="cards"
+                >
+                    Cards
+                </NavLink>
+                <NavLink
+                    to="atividades"
 
-            
-                
-                <div id="bar-navigation">
-                    <SearchForm/>
-                    <button
-                        onClick={() => setSection("0")}
-                        className={section === "0" ? "active" : ""}
-                    >
-                        Cards
-                    </button>
-                    <button
-                        onClick={() => setSection("1")}
-                        className={section === "1" ? "active" : ""}
-                    >
-                        Atividades
-                    </button>
-                    <button
-                        onClick={() => setSection("2")}
-                        className={section === "2" ? "active" : ""}
-                    >
-                        Material
-                    </button>
-                    <button
-                        onClick={() => setSection("3")}
-                        className={section === "3" ? "active" : ""}
-                    >
-                        Quiz
-                    </button>
-                    
-                </div>
-            <Outlet />
-            <div id="section-content">
-                {renderSection()}
+                >
+                    Atividades
+                </NavLink>
+                <NavLink
+                    to="material"
+                >
+                    Material
+                </NavLink>
+                <NavLink
+                    to="quiz"
+                >
+                    Quiz
+                </NavLink>
+
             </div>
+
 
         </>
     )

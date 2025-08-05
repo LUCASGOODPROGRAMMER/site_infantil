@@ -1,47 +1,47 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
+import './index.css';
 
-import "./index.css";
-import App from "./App.jsx";
+// Páginas
+import App from './App.jsx';
+import Cards from './routes/Cards.jsx';
+import Atividades from './routes/Atividades.jsx';
+import Quiz from './routes/Quiz.jsx';
+import Material from './components/Material.jsx';
+import Login from './Login.jsx';
+import ErrorPage from './routes/ErrorPage.jsx';
 
-// routes
-import ErrorPage from './routes/ErrorPage.jsx'
-import Home from "./routes/Home.jsx";
-import SearchResults from "./routes/SearchResults.jsx";
-
-
-//roteador
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <App />,
-      errorElement: <ErrorPage />,
-      children: [
-        { path: "/", element: <Home /> },
-     
-        {
-          path: "teste",
-          element: <Navigate to="/" />
-        },
-        {
-          path: "search",
-          element: <SearchResults/>
-        }
-      ],
-    },
-  ],
+// Configuração das rotas
+const router = createBrowserRouter([
   {
-    basename: "/site_infantil",
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      { path: "cards", element: <Cards /> },
+      { path: "quiz", element: <Quiz /> },
+      { path: "atividades", element: <Atividades /> },
+      { path: "material", element: <Material /> },
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+],
+  {
+    basename: "/site_infantil/", // <--- isso é essencial!);
   }
+
 );
+// Renderização do app
 
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/** RouterProvider Serve para ativar o sistema de rotas na aplicação React com o roteador que foi criado. */}
     <RouterProvider router={router} />
   </StrictMode>
 );
