@@ -1,20 +1,25 @@
 // hook
-import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
 // componentes
 import NavBar from './components/NavBar'
+import SearchForm from './components/SearchForm'
+import Cards from './components/Cards'
 
 
 //estilos
 import './App.css'
 
+
+
 function App() {
 
   return (
     <>
-        <div><NavBar />
-        <Outlet /></div>
+        <NavBar />
+        <SearchForm />
+        <Cards/>
+        <Outlet />
     </>
   )
 }
