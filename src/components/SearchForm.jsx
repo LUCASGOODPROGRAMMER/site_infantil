@@ -8,32 +8,42 @@ import binoculo from '../imgs/navbar/binoculo.svg';
 // estilos
 import './SearchForm.css';
 
-
 const SearchForm = () => {
-  const [query, setQuery] = useState();
-  const navigate = useNavigate("");
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const [openSearch, setOpenSearch] = useState(false); // abertura/fechamento
+
+  const searchToggle = () => {
+    setOpenSearch((prev) => !prev);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/search?name=${encodeURIComponent(query)}`);
-
+    if (query.trim()) {
+      navigate(`/search?name=${encodeURIComponent(query)}`);
+    }
   };
 
-  // jsx
   return (
     <div id="banner">
-      <form onSubmit={handleSubmit} id="search_bar">
-        <img src={binoculo} alt="search-icon" />
+      <form
+        onSubmit={handleSubmit}
+        id="search_bar"
+        className={openSearch ? "open" : ""}
+      >
+        <button type="button" onClick={searchToggle} id="search-btn">
+          <img src={binoculo} alt="search-icon" id="search-icon" />
+        </button>
         <input
           type="text"
-          placeholder="pesquisar"
+          placeholder="Pesquisar..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
         <input type="submit" value="buscar" style={{ display: "none" }} />
       </form>
     </div>
-
   );
 };
 
