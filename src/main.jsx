@@ -18,29 +18,43 @@ import ErrorPage from './routes/ErrorPage.jsx';
 import AddCard from './routes/AddCard.jsx';
 import FocusCard from './routes/FocusCard.jsx';
 import Login from './routes/Login.jsx';
+import Home from './routes/Home.jsx'
+import EditCard from './routes/EditCard.jsx';
+import Edit from './routes/Edit.jsx';
 
 // Configuração das rotas
-const router = createBrowserRouter(
-  [
-    {
-      element: <App />,
-      errorElement: <ErrorPage />,
-      children: [
-        { index: true, element: <Cards /> }, 
-        { path: "/cards/addCard", element: <AddCard /> },
-        { path: "/cards/:id", element: <FocusCard /> },
-        { path: "/quiz", element: <Quiz /> },
-        { path: "/atividades", element: <Atividades /> },
-        { path: "/material", element: <Material /> },
-        { path: "/search", element: <Search /> },
-        { path: "/login", element: <Login/>}
-      ],
-    }
-  ],
+const router = createBrowserRouter([
   {
-    basename: "/site_infantil/",
-  }
-);
+    path: "/",           // rota raiz
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",       // Home como layout
+        element: <Home />,
+        children: [
+          { path: "/", element: <Cards /> },      
+          { path: "cards/:id", element: <FocusCard /> }, 
+          { path: "quiz", element: <Quiz /> },       
+          { path: "atividades", element: <Atividades /> }, 
+          { path: "material", element: <Material /> }, 
+          { path: "search", element: <Search /> }, 
+        ],
+      },
+      { path: "login", element: <Login /> }, // rota fora do layout Home
+      {
+        path: "editCard",
+        element: <EditCard />,
+        children: [
+          { path: "addCard", element: <AddCard /> }, // /editCard/addCard
+          { path: "cards/:id", element: <Edit/>}
+        ]
+      }
+    ],
+  },
+], { basename: "/site_infantil/" });
+
+
 
 // Renderização do app
 

@@ -30,10 +30,7 @@ function App() {
         ))}
       </div>
       <NavBar />
-      <div className="container">
-        <BarNavigation />
-        <Outlet /> {/* Aqui entra Cards, Quiz, Atividades, Material */}
-      </div>
+      <Outlet />
     </div>
   );
 }

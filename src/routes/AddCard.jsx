@@ -23,7 +23,7 @@ const AddCard = () => {
     try {
       const response = await cardFetch.post("/cards", card);
       console.log("Card criado:", response.data);
-      navigate("/"); // volta para a lista de cards
+      navigate("/editCard"); // volta para a lista de cards
     } catch (error) {
       console.log("Erro ao criar card:", error);
     }
