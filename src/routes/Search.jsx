@@ -1,6 +1,6 @@
 // hooks
 import { useFetch } from "../hooks/useFetch"
-import { useSearchParams } from "react-router-dom"
+import { useSearchParams, Link } from "react-router-dom"
 
 //estilos
 import './Cards.css'
@@ -10,21 +10,23 @@ const Search = () => {
 
     const url = "http://localhost:3000/cards?" + searchParams;
 
-    const { data: items } = useFetch(url);
+    const { data: cards } = useFetch(url);
 
 
 
-    if (!items) return <p>Carregando...</p>;
+    if (!cards) return <p>Carregando...</p>;
 
     return (
         <div className="gallery">
 
-            {items.length > 0 ? (
-                items.map((item) => (
-                    <div className="card" key={item.id}>
-                        <img src={item.rotaImg} alt={item.name} className="animal-img" />
-                        <h2 className="animal-name">{item.name}</h2>
-                    </div>
+            {cards.length > 0 ? (
+                cards.map((card) => (
+                    <Link to={`/cards/${card.id}`} key={card.id}>
+                        <div className="card" >
+                            <img src={card.rotaImg} alt={card.name} className="animal-img" />
+                            <h2 className="animal-name">{card.name}</h2>
+                        </div>
+                    </Link>
                 ))
             ) : (
                 <p className="no-results">Nenhum animal encontrado.</p>

@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import "./BarNavigation.css"
-import SearchForm from "./SearchForm"
+import SearchForm from "./SearchForm.jsx"
 
 import Menu from '../imgs/barnavigation/menu.png'
+
+
 
 const BarNavigation = () => {
     const [menuOpen, setMenuOpen] = useState(false) // abertura do menu
@@ -38,6 +40,7 @@ const BarNavigation = () => {
                     <NavLink to="quiz">Quiz</NavLink>
                 </nav>
             </div>
+
         </div>
     )
 }

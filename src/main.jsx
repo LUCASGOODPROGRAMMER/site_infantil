@@ -7,9 +7,8 @@ import './index.css';
 
 // components
 import App from './App.jsx';
-import Login from './Login.jsx';
 
-// custom hooks
+// routes
 import Search from './routes/Search.jsx';
 import Cards from './routes/Cards.jsx';
 import Atividades from './routes/Atividades.jsx';
@@ -18,6 +17,7 @@ import Material from './routes/Material.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
 import AddCard from './routes/AddCard.jsx';
 import FocusCard from './routes/FocusCard.jsx';
+import Login from './routes/Login.jsx';
 
 // Configuração das rotas
 const router = createBrowserRouter(
@@ -27,18 +27,15 @@ const router = createBrowserRouter(
       errorElement: <ErrorPage />,
       children: [
         { index: true, element: <Cards /> }, 
-        { path: "/cards/add", element: <AddCard /> },
+        { path: "/cards/addCard", element: <AddCard /> },
         { path: "/cards/:id", element: <FocusCard /> },
         { path: "/quiz", element: <Quiz /> },
         { path: "/atividades", element: <Atividades /> },
         { path: "/material", element: <Material /> },
         { path: "/search", element: <Search /> },
+        { path: "/login", element: <Login/>}
       ],
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
+    }
   ],
   {
     basename: "/site_infantil/",

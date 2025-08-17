@@ -20,11 +20,10 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim()) {
-      navigate(`/search?name=${encodeURIComponent(query)}`);
-    } else{
-      navigate(-1)
-    }
+    if (!query.trim()) {
+     return navigate("/")
+    } 
+    navigate(`/search?name=${encodeURIComponent(query)}`);
   };
 
   return (

@@ -6,6 +6,10 @@
   color: white;
 }
 
+.container {
+  position: relative;
+}
+
 
 /* Container da neve */
 .snow-container {

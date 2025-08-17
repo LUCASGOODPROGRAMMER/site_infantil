@@ -14,7 +14,7 @@
 }
 
 #search_bar.open {
-  max-width: 300px; /* tamanho aberto */
+  max-width: 600px; /* tamanho aberto */
   opacity: 1;
 }
 

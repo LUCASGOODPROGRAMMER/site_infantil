@@ -1,26 +1,10 @@
 {
-    "cards": [
-        {
-            "id": 2,
-            "name": "tigre_siberiano",
-            "rotaImg": "https://i.pinimg.com/736x/bb/39/a9/bb39a9755ed9723ec3f926fc2d7a6d3b.jpg",
-            "text":"fsjfoasfjafjkajfjafjkajfjasjfafka"
-        },
-        {
-            "id":3,
-            "name":"burro",
-            "rotaImg":"https://i.pinimg.com/736x/95/dc/b0/95dcb00a87bfab768a54d6e3cb0744f6.jpg"
-        },
-        {
-            "id":4,
-            "name":"patrick",
-            "rotaImg":"https://i.pinimg.com/736x/33/a3/9e/33a39e4ab434f52d952d9b358f6e1643.jpg"
-        },
-        {
-            "id": 5,
-            "name":"not scan me",
-            "rotaImg":"https://i.pinimg.com/1200x/21/18/e9/2118e9eec80bb64b07e22ae05c65ba3f.jpg",
-            "text":"hello friend"
-        }
-    ]
+  "cards": [
+    {
+      "id": "20a1",
+      "name": "banana",
+      "text": "bananaaaaaaa",
+      "rotaImg": "https://blogmaniadebrincar.com.br/wp-content/uploads/2021/06/minions-08-bananas.png"
+    }
+  ]
 }
