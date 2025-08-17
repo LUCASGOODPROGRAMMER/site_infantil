@@ -1,29 +1,41 @@
-import { useFetch } from "../hooks/useFetch";
+import cardFetch from "../axios/config";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import './Cards.css';
 
 const Cards = () => {
+  const [cards, setCards] = useState([])
 
+  const getPosts = async () => {
+    try {
+      const response = await cardFetch.get("/cards")
+      const data = response.data
+      setCards(data)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      console.log("processo executado")
+    }
+  }
 
-  const url = "http://localhost:3000/cards";
-
-  const { data: items, loading, error } = useFetch(url);
-
-  if (loading) return <p className="loading">Carregando...</p>;
-  if (error) return <p>Erro: {error}</p>;
-  if (!items) return <p>Sem dados.</p>;
+  useEffect(() => {
+    getPosts()
+  }, [])
 
   return (
     <div className="gallery">
-        
-      {items.length > 0 ? (
-        items.map((item) => (
-          <div className="card" key={item.id}>
-            <img src={item.rotaImg} alt={item.name} className="animal-img" />
-            <h2 className="animal-name">{item.name}</h2>
-          </div>
-        ))
+      {cards.length === 0 ? (
+        <p>cargando dados</p>
       ) : (
-        <p className="no-results">Nenhum animal encontrado.</p>
+        cards.map((card) => (
+          <Link to={`/cards/${card.id}`} key={card.id}>
+                      <div className="card" >
+            <img src={card.rotaImg} alt={card.name} className="animal-img" />
+            <h2 className="animal-name">{card.name}</h2>
+          </div>
+          </Link>
+
+        ))
       )}
     </div>
   );

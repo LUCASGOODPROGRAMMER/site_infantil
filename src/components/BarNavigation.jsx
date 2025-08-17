@@ -32,7 +32,7 @@ const BarNavigation = () => {
                 <nav
                     className={`nav-links ${menuOpen ? "open" : ""} ${isClose ? "closing" : ""} bar-navigation`}
                 >
-                    <NavLink to="cards">Cards</NavLink>
+                    <NavLink to="/">Cards</NavLink>
                     <NavLink to="atividades">Atividades</NavLink>
                     <NavLink to="material">Material</NavLink>
                     <NavLink to="quiz">Quiz</NavLink>

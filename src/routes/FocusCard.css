@@ -1,0 +1,46 @@
+/* FocusCard.css */
+
+.card-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.card-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.card-header img {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  text-align: justify;
+}

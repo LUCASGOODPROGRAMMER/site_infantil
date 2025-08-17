@@ -16,31 +16,35 @@ import Atividades from './routes/Atividades.jsx';
 import Quiz from './routes/Quiz.jsx';
 import Material from './routes/Material.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
+import AddCard from './routes/AddCard.jsx';
+import FocusCard from './routes/FocusCard.jsx';
 
 // Configuração das rotas
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      element: <App />,
+      errorElement: <ErrorPage />,
+      children: [
+        { index: true, element: <Cards /> }, 
+        { path: "/cards/add", element: <AddCard /> },
+        { path: "/cards/:id", element: <FocusCard /> },
+        { path: "/quiz", element: <Quiz /> },
+        { path: "/atividades", element: <Atividades /> },
+        { path: "/material", element: <Material /> },
+        { path: "/search", element: <Search /> },
+      ],
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+  ],
   {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      { path: "cards", element: <Cards /> },
-      { path: "quiz", element: <Quiz /> },
-      { path: "atividades", element: <Atividades /> },
-      { path: "material", element: <Material /> },
-      { path: "search", element: <Search/>}
-    ],
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-],
-  {
-    basename: "/site_infantil/", // <--- isso é essencial!);
+    basename: "/site_infantil/",
   }
-
 );
+
 // Renderização do app
 
 

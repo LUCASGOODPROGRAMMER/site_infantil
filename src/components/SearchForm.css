@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #252525;
+  background-color: #0f172a56;
   padding: 0.5rem;
   border-radius: 8px;
   max-width: 57px; /* apenas ícone inicialmente */
@@ -41,7 +41,7 @@
 }
 
 #search_bar input::placeholder {
-  color: #aaa;
+  color: #0000009a;
   transition: opacity 0.2s ease;
 }
 
