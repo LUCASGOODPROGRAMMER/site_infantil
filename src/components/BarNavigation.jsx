@@ -40,7 +40,6 @@ const BarNavigation = () => {
                     <NavLink to="quiz">Quiz</NavLink>
                 </nav>
             </div>
-
         </div>
     )
 }

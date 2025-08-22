@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 // assets
-import binoculo from '../imgs/navbar/binoculo.svg';
+import binoculo from "../imgs/navbar/binoculo.svg";
 
 // estilos
-import './SearchForm.css';
+import "./SearchForm.css";
 
 const SearchForm = () => {
   const [query, setQuery] = useState("");
@@ -21,8 +21,8 @@ const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!query.trim()) {
-     return navigate("/")
-    } 
+      return navigate("/");
+    }
     navigate(`/search?name=${encodeURIComponent(query)}`);
   };
 

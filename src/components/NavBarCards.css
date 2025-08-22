@@ -1,0 +1,26 @@
+.navbar-cards {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.navlink-cards {
+    color: aliceblue;
+    text-transform: lowercase;
+    position: relative;
+}
+
+.navlink-cards::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: aliceblue;
+    transition: width 0.3s ease-in-out;
+}
+
+.navlinkActive::after {
+    width: 100%;
+}

@@ -2,7 +2,7 @@
 import { useNavigate } from 'react-router-dom'
 
 //componentes
-import MenuAdmin from '../components/MenuAdmin.jsx'
+import MenuDoAdmin from '../components/MenuDoAdmin.jsx'
 
 //imagens
 import people from '../imgs/navbar/people.svg'
@@ -16,7 +16,7 @@ const NavBar = () => {
   }
   return (
     <nav>
-       <MenuAdmin />
+       <MenuDoAdmin />
        <div>
         <img src={people}  alt="" />
         <button id="btn-login" onClick={activeLogin}>login</button>

@@ -1,47 +1,39 @@
-import { useState, useEffect } from 'react';
-import cardFetch from '../axios/config';
-import { Outlet } from 'react-router-dom';
-import NavBarEdit from '../components/NavBarEdit';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
+import cardFetch from "../axios/config";
 
-import './EditCard.css'
-import { Link } from 'react-router-dom';
+import "./ExibirCards.css";
 
-const FocusCard = () => {
+const ExibirCards = () => {
   const [cards, setCards] = useState([]);
 
   const getPosts = async () => {
     try {
-      const response = await cardFetch.get('/cards');
+      const response = await cardFetch.get("/cards");
       setCards(response.data);
     } catch (error) {
-      console.error('Erro ao buscar cards:', error);
+      console.error("Erro ao buscar cards:", error);
     } finally {
-      console.log('Requisição executada');
+      console.log("Requisição executada");
     }
   };
 
-  const deleteCard = async(id) => {
+  const deleteCard = async (id) => {
     try {
-      const response = await cardFetch.delete(`/cards/${id}`)
-      setCards(cards.filter((card) => card.id !== id))
+      setCards(cards.filter((card) => card.id !== id));
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-
+  };
   useEffect(() => {
     getPosts();
   }, []);
-
   return (
-    <div className="edit-container">
-
-      <Outlet/>
+    <div className="edit-cards-container">
       {cards.length === 0 ? (
         <p>Carregando...</p>
       ) : (
-        
         cards.map((card) => (
           <div key={card.id} className="edit-card">
             <div className="edit-header">
@@ -50,7 +42,7 @@ const FocusCard = () => {
             </div>
             <div className="edit-options">
               <button onClick={() => deleteCard(card.id)}>Excluir</button>
-              <Link to={`cards/${card.id}`}>editar</Link>
+              <Link to={`editarCards/${card.id}`}>editar</Link>
             </div>
           </div>
         ))
@@ -59,4 +51,4 @@ const FocusCard = () => {
   );
 };
 
-export default FocusCard;
+export default ExibirCards;

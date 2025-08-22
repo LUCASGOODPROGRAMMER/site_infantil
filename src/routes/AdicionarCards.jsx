@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import cardFetch from "../axios/config";
+import './AdicionarCards.css'
 
-const AddCard = () => {
+const AdicionarCards = () => {
   const navigate = useNavigate();
 
   const [card, setCard] = useState({
@@ -19,20 +20,20 @@ const AddCard = () => {
   };
 
   const sendPost = async (e) => {
-    e.preventDefault(); // previne o reload da página
+    e.preventDefault();
     try {
       const response = await cardFetch.post("/cards", card);
       console.log("Card criado:", response.data);
-      navigate("/editCard"); // volta para a lista de cards
+      navigate("/GerenciarCards");
     } catch (error) {
       console.log("Erro ao criar card:", error);
     }
   };
 
   return (
-    <div>
+    <div className="add-card">
       <h2>Adicionar Card</h2>
-      <form onSubmit={sendPost}>
+      <form className="add-card-form" onSubmit={sendPost}>
         <input
           type="text"
           name="name"
@@ -60,4 +61,4 @@ const AddCard = () => {
   );
 };
 
-export default AddCard;
+export default AdicionarCards;

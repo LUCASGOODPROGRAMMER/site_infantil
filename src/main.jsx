@@ -15,12 +15,13 @@ import Atividades from './routes/Atividades.jsx';
 import Quiz from './routes/Quiz.jsx';
 import Material from './routes/Material.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
-import AddCard from './routes/AddCard.jsx';
+import AdicionarCards from './routes/AdicionarCards.jsx';
 import FocusCard from './routes/FocusCard.jsx';
 import Login from './routes/Login.jsx';
 import Home from './routes/Home.jsx'
-import EditCard from './routes/EditCard.jsx';
-import Edit from './routes/Edit.jsx';
+import GerenciarCards from './routes/GerenciarCards.jsx';
+import ExibirCards from './routes/ExibirCards.jsx';
+import EditarCards from './routes/EditarCards.jsx';
 
 // Configuração das rotas
 const router = createBrowserRouter([
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
         path: "/",       // Home como layout
         element: <Home />,
         children: [
-          { path: "/", element: <Cards /> },      
+          { index: true, element: <Cards /> },      
           { path: "cards/:id", element: <FocusCard /> }, 
           { path: "quiz", element: <Quiz /> },       
           { path: "atividades", element: <Atividades /> }, 
@@ -43,11 +44,12 @@ const router = createBrowserRouter([
       },
       { path: "login", element: <Login /> }, // rota fora do layout Home
       {
-        path: "editCard",
-        element: <EditCard />,
+        path: "GerenciarCards",
+        element: <GerenciarCards />,
         children: [
-          { path: "addCard", element: <AddCard /> }, // /editCard/addCard
-          { path: "cards/:id", element: <Edit/>}
+          { index: true, element: <ExibirCards/>},
+          { path: "adicionarCards", element: <AdicionarCards /> },
+          { path: "editarCards/:id", element: <EditarCards/>}
         ]
       }
     ],
